@@ -142,6 +142,7 @@ basecamps
 baselard
 bashable
 basidiocarp
+basswood
 batching
 batlike
 batrachian
@@ -894,6 +895,7 @@ km
 knapping
 knifehand
 knockback
+knotweed
 knowium
 knuckledusters
 knyf
