@@ -1032,25 +1032,33 @@ static bool eat( item &food, Character &you, bool force )
         }
     }
 
+    const bool food_is_human_flesh = food.has_flag( flag_CANNIBALISM ) ||
+                                     ( food.has_flag( flag_STRICT_HUMANITARIANISM ) &&
+                                       !has_trait_flag( json_flag_STRICT_HUMANITARIAN ) );
+
     // Chance to become parasitised
     if( !will_vomit && !you.has_flag( json_flag_PARAIMMUNE ) ) {
         if( food.get_comestible()->parasites > 0 && !food.has_flag( flag_NO_PARASITES ) &&
+            int chance =  rng( 0, 100 )
             one_in( food.get_comestible()->parasites ) ) {
-            switch( rng( 0, 3 ) ) {
-                case 0:
+                // Something something prions
+                if( food_is_human_flesh ) {
+                    you.add_effect( effect_brainworms, 1_turns, true );
+                }
+                if( chance <= 70 ) {
                     if( !you.has_trait( trait_EATHEALTH ) ) {
                         you.add_effect( effect_tapeworm, 1_turns, true );
                     }
                     break;
-                case 1:
+                } else if( chance <= 80 ) {
                     if( !you.has_trait( trait_ACIDBLOOD ) ) {
                         you.add_effect( effect_bloodworms, 1_turns, true );
                     }
                     break;
-                case 2:
+                } else if( chance <= 95 ) {
                     you.add_effect( effect_brainworms, 1_turns, true );
                     break;
-                case 3:
+                } else if( chance <= 100 ) {
                     you.add_effect( effect_paincysts, 1_turns, true );
             }
         }
@@ -1188,9 +1196,6 @@ void Character::modify_morale( item &food, const int nutr )
         }
     }
 
-    const bool food_is_human_flesh = food.has_flag( flag_CANNIBALISM ) ||
-                                     ( food.has_flag( flag_STRICT_HUMANITARIANISM ) &&
-                                       !has_trait_flag( json_flag_STRICT_HUMANITARIAN ) );
     if( food_is_human_flesh ) {
         // Sapiovores don't recognize humans as the same species.
         // But let them possibly feel cool about eating sapient stuff - treat like psycho
