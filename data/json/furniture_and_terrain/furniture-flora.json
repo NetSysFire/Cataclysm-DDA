@@ -1,11 +1,25 @@
 [
   {
     "type": "furniture",
-    "id": "f_mutpoppy",
-    "name": "mutated poppy flower",
-    "description": "These strange flowers have appeared in the wake of the Cataclysm, and their buds can be used for medicinal purposes, like the seeds of the mundane poppy they're named after.  The dirt around it gently churns as its roots writhe beneath the soil, and it's surrounded by an overwhelming floral smell that makes you feel sleepy.",
+    "id": "f_poppy",
+    "name": "poppy flower",
+    "description": "A red and sometimes pink flower.  When the petals have not emerged yet, its bud could be collected.",
     "symbol": "f",
     "color": "light_red",
+    "looks_like": "f_dandelion",
+    "move_cost_mod": 0,
+    "required_str": -1,
+    "flags": [ "TRANSPARENT", "TINY", "FLAMMABLE_ASH", "NOCOLLIDE", "FLOWER" ],
+    "harvest_by_season": [ { "seasons": [ "summer" ], "id": "poppy_harv" } ],
+    "bash": { "str_min": 2, "str_max": 6, "sound": "crunch.", "sound_fail": "whish." }
+  },
+  {
+    "type": "furniture",
+    "id": "f_mutpoppy",
+    "name": "mutated poppy flower",
+    "description": "These strange flowers have appeared in the wake of the Cataclysm, and their buds can be used for medicinal purposes, like the buds of the mundane poppy they're named after.  The dirt around it gently churns as its roots writhe beneath the soil, and it's surrounded by an overwhelming floral smell that makes you feel sleepy.",
+    "symbol": "f",
+    "color": "red",
     "looks_like": "f_dandelion",
     "move_cost_mod": 0,
     "required_str": -1,

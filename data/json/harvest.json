@@ -10,6 +10,11 @@
     "entries": [  ]
   },
   {
+    "id": "poppy_harv",
+    "type": "harvest",
+    "entries": [ { "drop": "poppy_bud", "base_num": [ 0, 1 ] }, { "drop": "withered" } ]
+  },
+  {
     "id": "dandelion_harv",
     "type": "harvest",
     "entries": [ { "drop": "raw_dandelion", "base_num": [ 1, 4 ] } ]
