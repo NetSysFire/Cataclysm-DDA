@@ -1,0 +1,38 @@
+[
+  {
+    "type": "overmap_special",
+    "id": "battlefield_mutable",
+    "subtype": "mutable",
+    "locations": [ "field" ],
+    "occurrences": [ 1, 5 ],
+    "//": "Place before all priority buildings and before battlefields",
+    "priority": 3,
+    "flags": [ "MANMADE" ],
+    "check_for_locations_area": [ { "type": [ "field" ], "from": [ 1, 1, 0 ], "to": [ -1, -1, 0 ] } ],
+    "joins": [ "battlefield_to_battlefield" ],
+    "overmaps": {
+      "battlefield_core": {
+        "overmap": "battlefield_core",
+        "north": "battlefield_to_battlefield",
+        "east": "battlefield_to_battlefield",
+        "south": "battlefield_to_battlefield",
+        "west": "battlefield_to_battlefield"
+      },
+      "battlefield_end": { "overmap": "battlefield_end_north", "north": "battlefield_to_battlefield" },
+      "battlefield_fill": {
+        "overmap": "battlefield_end_north",
+        "north": { "id": "battlefield_to_battlefield", "type": "available" },
+        "east": { "id": "battlefield_to_battlefield", "type": "available" },
+        "west": { "id": "battlefield_to_battlefield", "type": "available" }
+      }
+    },
+    "root": "battlefield_core",
+    "phases": [
+      [
+        { "overmap": "battlefield_core", "weight": 200 },
+        { "overmap": "battlefield_end", "weight": 100 },
+        { "overmap": "battlefield_fill", "weight": 1 }
+      ]
+    ]
+  }
+]

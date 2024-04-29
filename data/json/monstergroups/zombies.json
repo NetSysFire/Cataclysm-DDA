@@ -96,6 +96,14 @@
     "name": "GROUP_ZOMBIE",
     "monsters": [
       { "group": "GROUP_CIVILIANS_STANDARD", "weight": 500, "cost_multiplier": 0 },
+      { "group": "GROUP_ZOMBIE_NO_CIVILIANS", "weight": 9921, "cost_multiplier": 0 }
+    ]
+  },
+  {
+    "type": "monstergroup",
+    "name": "GROUP_ZOMBIE_NO_CIVILIANS",
+    "monsters": [
+      { "group": "GROUP_FERAL", "weight": 121 },
       { "monster": "mon_zombie", "weight": 10, "cost_multiplier": 7, "pack_size": [ 5, 20 ] },
       { "monster": "mon_zombie", "weight": 10, "cost_multiplier": 13, "pack_size": [ 15, 40 ] },
       { "monster": "mon_zombie", "weight": 10, "cost_multiplier": 20, "pack_size": [ 25, 60 ] },
@@ -127,7 +135,6 @@
       { "monster": "mon_beekeeper", "weight": 10, "cost_multiplier": 5 },
       { "monster": "mon_zombie_technician", "weight": 10, "cost_multiplier": 12 },
       { "monster": "mon_zombie_runner", "weight": 200, "cost_multiplier": 5, "pack_size": [ 1, 4 ] },
-      { "group": "GROUP_FERAL", "weight": 121 },
       { "monster": "mon_feral_soldier", "weight": 10, "cost_multiplier": 5 },
       { "monster": "mon_zombie_brainless", "weight": 650 }
     ]

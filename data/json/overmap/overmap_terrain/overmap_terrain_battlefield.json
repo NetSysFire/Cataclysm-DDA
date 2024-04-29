@@ -1,0 +1,23 @@
+[
+  {
+    "type": "overmap_terrain",
+    "abstract": "generic_battlefield",
+    "copy-from": "generic_open_land",
+    "name": "battlefield",
+    "sym": ",",
+    "color": "light_gray",
+    "travel_cost_type": "field",
+    "flags": [ "REQUIRES_PREDECESSOR" ]
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "battlefield_core",
+    "copy-from": "generic_battlefield",
+    "extend": { "flags": [ "NO_ROTATE" ] }
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "battlefield_end",
+    "copy-from": "generic_battlefield"
+  }
+]

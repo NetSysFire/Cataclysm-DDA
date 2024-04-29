@@ -263,5 +263,49 @@
       "sound_fail": "whack!",
       "items": [ { "item": "2x4", "count": [ 2, 4 ] } ]
     }
+  },
+  {
+    "type": "furniture",
+    "id": "f_barbed_wire",
+    "name": "barbed wire",
+    "symbol": "o",
+    "bgcolor": "light_gray",
+    "description": "Loops upon loops of barbed concertina wire, just waiting for something to try and walk into it.",
+    "move_cost_mod": 2,
+    "coverage": 30,
+    "required_str": -1,
+    "flags": [ "TRANSPARENT", "THIN_OBSTACLE", "SHARP", "PAINFUL", "PERMEABLE", "SHORT" ],
+    "deconstruct": { "items": [ { "item": "wire_barbed", "count": 6 } ] },
+    "bash": {
+      "str_min": 5,
+      "str_max": 40,
+      "sound": "smash!",
+      "sound_fail": "whump.",
+      "items": [ { "item": "wire_barbed", "count": [ 1, 4 ] } ]
+    }
+  },
+  {
+    "type": "furniture",
+    "id": "f_barbed_wire_with_posts",
+    "name": "barbed wire",
+    "symbol": "o",
+    "bgcolor": "light_gray",
+    "description": "Loops upon loops of barbed concertina wire, just waiting for something to try and walk into it.  This section is held up with stakes, making it a bit more robust.",
+    "move_cost_mod": 2,
+    "coverage": 35,
+    "required_str": -1,
+    "flags": [ "TRANSPARENT", "THIN_OBSTACLE", "SHARP", "PAINFUL", "PERMEABLE", "SHORT" ],
+    "deconstruct": { "items": [ { "item": "wire_barbed", "count": 6 }, { "item": "pointy_stick", "count": 3 } ] },
+    "bash": {
+      "str_min": 7,
+      "str_max": 40,
+      "sound": "smash!",
+      "sound_fail": "whump.",
+      "items": [
+        { "item": "wire_barbed", "count": [ 1, 4 ] },
+        { "item": "pointy_stick", "count": [ 0, 2 ] },
+        { "item": "splinter", "count": [ 0, 4 ] }
+      ]
+    }
   }
 ]
